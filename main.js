@@ -23,9 +23,9 @@ function buytpc() {
     }
 }
 
-var mainGameLoop = window.setInterval(function() {
-    getThing()
-  }, 50)
+//var mainGameLoop = window.setInterval(function() {
+//  getThing()
+//}, 50)
 
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem("NISave", JSON.stringify(gameData))
