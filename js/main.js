@@ -36,7 +36,7 @@ function buytpsec() {
         gameData.tpsecCost = Math.floor(gameData.tpsecCost * 1.5)
         gameData.tpsecLevel += 1
         document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-        document.getElementById('tpsecUpdate').innerHTML = 'Gain' + gameData.tpsec + 'things per second<br>(Cost:' + gameData.tpsecCost +')'
+        document.getElementById('tpsecUpdate').innerHTML = 'Gain ' + gameData.tpsec + ' things per second<br>(Cost: ' + gameData.tpsecCost +')'
     }
 }
 
@@ -56,8 +56,8 @@ if (savegame !== null) {
     gameData = savegame
     document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
     document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-    document.getElementById('tpcUpdate').innerHTML = 'Thing gain upgrade: level ' + gameData.tpcLevel + '<br>(Cost:' + gameData.tpcCost +')'
-    document.getElementById('tpsecUpdate').innerHTML = 'Gain' + gameData.tpsec + 'things per second<br>(Cost:' + gameData.tpsecCost +')'
+    document.getElementById('tpcUpdate').innerHTML = 'Thing gain upgrade: level ' + gameData.tpcLevel + '<br>(Cost: ' + gameData.tpcCost +', + 1 per level)'
+    document.getElementById('tpsecUpdate').innerHTML = 'Gain ' + gameData.tpsec + ' things per second<br>(Cost: ' + gameData.tpsecCost +', + 1 per level)'
 }
 
 function openTab(evt, tabName) {
