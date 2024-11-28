@@ -1,4 +1,4 @@
 # Nothing-Incremental
-For collage project.
+For the collage project.
 
 https://peap1ant.github.io/Nothing-Incremental
