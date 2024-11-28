@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        body {font-family: Calibri}
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nothing Incremental</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p id = 'thingCurrent'>Nothing: 0</p>
-    <button onclick = 'getThing()'>Get things</button>
-    <button onclick = 'buytpc()' id = 'tpcUpdate'>Thing gain upgrade: level 0<br>(Cost: 10)</button>
+    <!--tabs-->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'main')" id="defaultOpen">Main</button>
+        <button class="tablinks" onclick="openTab(event, 'setting')">Setting</button>
+      </div>
+
+    <div id="main" class="tabcontent">
+        <p id="thingCurrent">Nothing: 0</p>
+        <button onclick="getThing()">Get things</button>
+        <div></div>
+        <button onclick="buytpc()" id="tpcUpdate">Things gain upgrade: level 0<br>(Cost: 10)</button>
+        <div></div>
+        <button onclick="buytpsec()" id="tpsecUpdate">Gain 0 things per second<br>(Cost: 20)</button>
+    </div>
+
+    <div id="setting" class="tabcontent">
+        <p>Nothing.</p>
+    </div>
+
     <script src="main.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>
