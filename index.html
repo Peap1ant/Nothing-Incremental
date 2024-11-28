@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        body {font-family: Calibri}
-    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nothing Incremental</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <!--tabs-->
+    <p id="thingCurrent" class="text-center">Nothing: 0</p>
     <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'main')" id="defaultOpen">Main</button>
-        <button class="tablinks" onclick="openTab(event, 'setting')">Setting</button>
+        <button class="tablinks btn-center" onclick="openTab(event, 'main')" id="defaultOpen">Main</button>
+        <button class="tablinks btn-center" onclick="openTab(event, 'setting')">Setting</button>
       </div>
-
-    <div id="main" class="tabcontent">
-        <p id="thingCurrent">Nothing: 0</p>
+    <div id="main" class="tabcontent main">
         <button onclick="getThing()">Get things</button>
         <div></div>
-        <button onclick="buytpc()" id="tpcUpdate">Things gain upgrade: level 0<br>(Cost: 10, + 1 per level)</button>
+        <button onclick="buytpc()" id="tpcUpdate">Things gain upgrade: level 0<br>(Cost: 5, + 1 per level)</button>
         <div></div>
-        <button onclick="buytpsec()" id="tpsecUpdate">Gain 0 things per second<br>(Cost: 20, + 1 per level)</button>
+        <button onclick="buytpsec()" id="tpsecUpdate">Gain 0 things per second<br>(Cost: 10, + 1 per level)</button>
     </div>
-
-    <div id="setting" class="tabcontent">
-        <p>Nothing.</p>
+    <div id="setting" class="tabcontent main">
+        <p class="text-center">Nothing.</p>
     </div>
-
     <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 var gameData = {
     thing: 0,
     tpc: 1, //things per click
-    tpcCost: 10,
+    tpcCost: 5,
     tpcLevel: 0,
     tpsec: 0, //things per second
-    tpsecCost: 20,
+    tpsecCost: 10,
     tpsecLevel: 0
 }
 
@@ -33,7 +33,7 @@ function buytpsec() {
     if (gameData.thing >= gameData.tpsecCost) {
         gameData.thing -= gameData.tpsecCost
         gameData.tpsec += 1
-        gameData.tpsecCost = Math.floor(gameData.tpsecCost * 1.5)
+        gameData.tpsecCost = Math.floor(gameData.tpsecCost * 2)
         gameData.tpsecLevel += 1
         document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
         document.getElementById('tpsecUpdate').innerHTML = 'Gain ' + gameData.tpsec + ' things per second<br>(Cost: ' + gameData.tpsecCost +', + 1 per level)'
