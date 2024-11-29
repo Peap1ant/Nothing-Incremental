@@ -1,3 +1,5 @@
+// game data
+
 var gameData = {
     thing: 0,
     tpc: 1, //things per click
@@ -8,73 +10,23 @@ var gameData = {
     tpsecLevel: 0
 }
 
-function getThing() {
-    gameData.thing += gameData.tpc
-    document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-}
+// game refreshing every 50ms
 
-function buytpc() {
-    if (gameData.thing >= gameData.tpcCost) {
-        gameData.thing -= gameData.tpcCost
-        gameData.tpc += 1
-        gameData.tpcCost = Math.floor(gameData.tpcCost * 1.5)
-        gameData.tpcLevel += 1
-        document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-        document.getElementById('tpcUpdate').innerHTML = 'Thing gain upgrade: level ' + gameData.tpcLevel + '<br>(Cost:' + gameData.tpcCost +', + 1 per level)'
-    }
-}
+function refreshing() { gameData.thing += 0}
+var mainGameLoop = window.setInterval(function() {refreshing()}, 50)
 
-function getThingPerSecond() {
-    gameData.thing += gameData.tpsec
-    document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-}
-
-function buytpsec() {
-    if (gameData.thing >= gameData.tpsecCost) {
-        gameData.thing -= gameData.tpsecCost
-        gameData.tpsec += 1
-        gameData.tpsecCost = Math.floor(gameData.tpsecCost * 2)
-        gameData.tpsecLevel += 1
-        document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-        document.getElementById('tpsecUpdate').innerHTML = 'Gain ' + gameData.tpsec + ' things per second<br>(Cost: ' + gameData.tpsecCost +', + 1 per level)'
-    }
-}
-
-var getTpsecLoop = window.setInterval(function() {
-    getThingPerSecond()
-}, 1000)
+// save gameData as JSON
 
 var saveGameLoop = window.setInterval(function() {
     localStorage.setItem('NISave', JSON.stringify(gameData))
 }, 10000)
 
-function refreshing() { gameData.thing += 0}
-var mainGameLoop = window.setInterval(function() {refreshing()}, 50)
+// load game
 
 var savegame = JSON.parse(localStorage.getItem('NISave'))
 if (savegame !== null) {
     gameData = savegame
     document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
-    document.getElementById('thingCurrent').innerHTML = 'Thing: ' + gameData.thing
     document.getElementById('tpcUpdate').innerHTML = 'Thing gain upgrade: level ' + gameData.tpcLevel + '<br>(Cost: ' + gameData.tpcCost +', + 1 per level)'
     document.getElementById('tpsecUpdate').innerHTML = 'Gain ' + gameData.tpsec + ' things per second<br>(Cost: ' + gameData.tpsecCost +', + 1 per level)'
 }
-
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName('tabcontent');
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = 'none';
-    }
-
-    tablinks = document.getElementsByClassName('tablinks');
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(' active', '');
-    }
-
-    document.getElementById(tabName).style.display = 'block';
-    evt.currentTarget.className += ' active';
-}
-
-document.getElementById("defaultOpen").click();

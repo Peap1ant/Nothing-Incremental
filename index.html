@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nothing Incremental</title>
+    <!--load css-->
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/tabs.css">
 </head>
 <body>
+    <!--tabs-->
     <p id="thingCurrent" class="text-center">Nothing: 0</p>
     <div class="tab">
         <button class="tablinks btn-center" onclick="openTab(event, 'main')" id="defaultOpen">Main</button>
         <button class="tablinks btn-center" onclick="openTab(event, 'setting')">Setting</button>
-      </div>
+    </div>
+    <!--main tab-->
     <div id="main" class="tabcontent main">
         <button onclick="getThing()">Get things</button>
         <div></div>
@@ -19,9 +23,13 @@
         <div></div>
         <button onclick="buytpsec()" id="tpsecUpdate">Gain 0 things per second<br>(Cost: 10, + 1 per level)</button>
     </div>
+    <!--setting tab-->
     <div id="setting" class="tabcontent main">
         <p class="text-center">Nothing.</p>
     </div>
+    <!--load js-->
     <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
+    <script src="js/tabs.js" charset="utf-8" type="text/javascript"></script>
+    <script src="js/features/thing.js" charset="utf-8" type="text/javascript"></script>
 </body>
 </html>
