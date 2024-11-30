@@ -12,8 +12,9 @@ var gameData = {
 
 // game refreshing every 50ms
 
-function refreshing() { gameData.thing += 0}
-var mainGameLoop = window.setInterval(function() {refreshing()}, 50)
+var mainGameLoop = window.setInterval(function() {
+    gameData.thing += 0
+}, 50)
 
 // save gameData as JSON
 
