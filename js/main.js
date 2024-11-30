@@ -10,12 +10,6 @@ var gameData = {
     tpsecLevel: 0
 }
 
-// game refreshing every 50ms
-
-var mainGameLoop = window.setInterval(function() {
-    gameData.thing += 0
-}, 50)
-
 // save gameData as JSON
 
 var saveGameLoop = window.setInterval(function() {
